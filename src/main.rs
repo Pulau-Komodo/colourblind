@@ -21,7 +21,7 @@ fn main() {
 		*colour = patterns.apply(x, y, *colour);
 	}
 	DynamicImage::ImageRgb8(image)
-		//		.into_luma8()
+		.into_luma8()
 		.write_with_encoder(PngEncoder::new_with_quality(
 			std::fs::File::create(output_path).unwrap(),
 			image::codecs::png::CompressionType::Best,
